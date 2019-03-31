@@ -15,8 +15,12 @@ C.itemset(4, 0)
 D.itemset(4, 0)
 E.itemset(4, 0)
 A.unexistant_method(4)  # [no-member]
+B.unexistant_method(4)  # [no-member]
+C.unexistant_method(4)  # [no-member]
+D.unexistant_method(4)  # [no-member]
+E.unexistant_method(4)  # [no-member]
 
-# bug 2747. *_like functions call should be inferred as ndarray and thus
+# bug 2747/2767. *_like functions call should be inferred as ndarray and thus
 # have __getitem__ and __setitem__
 a = np.array([[1, 2, 3], [4, 5, 6]])
 b = np.zeros_like(a)
@@ -34,3 +38,28 @@ x = b[index]
 y = c[index]
 z = d[index]
 w = e[index]
+
+# bug 2694/2784. Calls to logical_or functions (and similar) should be inferred as ndarray
+# and thus have itemset method
+x = np.array([0, 1, 0, 1], dtype=np.bool)
+y = np.array([0, 0, 1, 1], dtype=np.bool)
+z = np.logical_or(x, y)
+z.itemset(4, 0)
+z.unexistant_method(3)  # [no-member]
+
+# bug 2759. Calls to multiarray.dot function should be inferred as an ndarray
+# and thus have itemset method
+x = np.array([0, 1, 0, 1], dtype=np.bool)
+y = np.array([0, 0, 1, 1], dtype=np.bool)
+z = np.dot(x, y)
+w = np.vdot(x, y)
+z.itemset(4, 0)
+w.itemset(4, 0)
+z.unexistant_method(3)  # [no-member]
+w.unexistant_method(3)  # [no-member]
+
+# bug 2436. Calls to linspace function should be inferred as an ndarray
+# end thus have itemset method
+x = np.linspace(3, 5)
+x.itemset(4, 0)
+x.unexistant_method(3)  # [no-member]

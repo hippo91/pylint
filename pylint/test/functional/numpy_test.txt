@@ -1,1 +1,9 @@
 no-member:17::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
+no-member:18::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
+no-member:19::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
+no-member:20::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
+no-member:21::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
+no-member:48::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
+no-member:58::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
+no-member:59::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
+no-member:65::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
