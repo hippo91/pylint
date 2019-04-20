@@ -63,3 +63,19 @@ w.unexistant_method(3)  # [no-member]
 x = np.linspace(3, 5)
 x.itemset(4, 0)
 x.unexistant_method(3)  # [no-member]
+
+# bug 2326. Bad signature of timedelta64 and datetime64
+np.timedelta64(1, 'D')
+np.timedelta64(1)
+np.datetime64(1)
+np.datetime64(1, 'D')
+np.datetime64(1, 'D', 3)  # [too-many-function-args]
+np.timedelta64(1, 'D', 3)  # [too-many-function-args]
+x = np.array([1, 2], [2, 1])
+x.reshape((4, 1))
+
+# bug 2021. Numpy empty should be inferred as an ndarray
+x = np.ones((1, 1))
+y = x.take(0)
+z = np.split(x, 1)
+y.unexistant_method(3)  # [no-member]

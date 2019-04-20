@@ -7,3 +7,6 @@ no-member:48::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
 no-member:58::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
 no-member:59::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
 no-member:65::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
+too-many-function-args:72::Too many positional arguments for constructor call:HIGH
+too-many-function-args:73::Too many positional arguments for constructor call:HIGH
+no-member:81::Instance of 'ndarray' has no 'unexistant_method' member:INFERENCE
