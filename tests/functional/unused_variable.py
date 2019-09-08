@@ -58,3 +58,17 @@ def unused_import_from():
 def unused_import_in_function(value):
     from six import PY2, text_type # [unused-import]
     return value.encode("utf-8") if PY2 else value
+
+# bug 3044. No "unused-variable"
+# message should be emitted as the non local
+# a variable is modified thanks to the range function.
+def simpleFunction4():
+    a = 1
+
+    def nonlocal_writer():
+        nonlocal a
+        for a in range(10):
+            pass
+
+    nonlocal_writer()
+    assert a == 9, a
