@@ -1012,7 +1012,6 @@ class VariablesChecker(BaseChecker):
         self.add_message("unused-argument", args=name, node=stmt, confidence=confidence)
 
     def _check_is_unused(self, name, node, stmt, global_names, nonlocal_names):
-        breakpoint()
         # pylint: disable=too-many-branches
         # Ignore some special names specified by user configuration.
         if self._is_name_ignored(stmt, name):
@@ -1087,7 +1086,6 @@ class VariablesChecker(BaseChecker):
             if utils.is_overload_stub(node):
                 return
 
-            breakpoint()
             self.add_message(message_name, args=name, node=stmt)
 
     def leave_functiondef(self, node):
