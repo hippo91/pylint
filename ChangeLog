@@ -7,6 +7,11 @@ What's New in Pylint 2.4.0?
 
 Release date: TBA
 
+* Do not emit ``unused-variable`` message when a nonlocal variable
+  is the target of a for loop
+
+  Close #3044
+
 * Added a new check, ``consider-using-sys-exit``
 
   This check is emitted when we detect that a quit() or exit() is invoked 

@@ -118,6 +118,11 @@ New checkers
 Other Changes
 =============
 
+* Do not emit ``unused-variable`` message when a nonlocal variable
+  is the target of a for loop
+
+  Close #3044
+
 * Don't emit ``protected-access`` when a single underscore prefixed attribute is used 
   inside a special method
 
