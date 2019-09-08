@@ -1044,7 +1044,7 @@ class VariablesChecker(BaseChecker):
                     if name in nonlocal_names:
                         return
                 elif isinstance(stmt.parent, astroid.For):
-                    if stmt.parent.target.name == name:
+                    if stmt.parent.target.name in nonlocal_names:
                         return 
 
             qname = asname = None
